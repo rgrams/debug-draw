@@ -1,5 +1,5 @@
 # Debug-Draw
-A set of convenience functions to draw lines, shapes, and text with the "draw_line" and "draw_text" render messages. This is not intended to be used for final game graphics.
+A set of convenience functions to draw lines, shapes, and text with the "draw_line" and "draw_text" render messages. This is not intended to be used for final game graphics. Most of the functions only draw on a 2D plane at z=0, though the `ray` function can draw 3D lines.
 
 __Dependency Link:__
 >https://github.com/rgrams/debug-draw/archive/master.zip
@@ -48,7 +48,7 @@ Draw a line from `v1` to `v2`. The line can be 3D.
 	* *Optional - `debugdraw.default_color` (yellow) by default.*
 
 ### debugdraw.line(x1, y1, x2, y2, [color])
-Draw a 2d line from (x1, y1) to (x2, y2).
+Draw a 2D line from (x1, y1) to (x2, y2).
 
 *PARAMETERS*
 * __x1, y1__ <kbd>number</kbd> - Line start point X and Y.
