@@ -77,7 +77,7 @@ function M.rect(lt, rt, top, bot, color)
 	M.line(lt, bot, lt, top, color)
 end
 
-function M.box(x, y, w, h, color, rot)
+function M.box(cx, cy, w, h, color, rot)
 	h = h or w
 	color = color or M.default_color
 	if M.COLORS[color] then  color = M.COLORS[color]  end
@@ -88,13 +88,13 @@ function M.box(x, y, w, h, color, rot)
 		trx, try = rotate_xy(w2, h2, rot)
 		brx, bry = rotate_xy(w2, -h2, rot)
 		blx, bly = rotate_xy(-w2, -h2, rot)
-		tlx, tly, trx, try = tlx + x, tly + y, trx + x, try + y
-		brx, bry, blx, bly = brx + x, bry + y, blx + x, bly + y
+		tlx, tly, trx, try = tlx + cx, tly + cy, trx + cx, try + cy
+		brx, bry, blx, bly = brx + cx, bry + cy, blx + cx, bly + cy
 	else
-		tlx, tly = x - w2, y + h2
-		trx, try = x + w2, y + h2
-		brx, bry = x + w2, y - h2
-		blx, bly = x - w2, y - h2
+		tlx, tly = cx - w2, cy + h2
+		trx, try = cx + w2, cy + h2
+		brx, bry = cx + w2, cy - h2
+		blx, bly = cx - w2, cy - h2
 	end
 	M.line(tlx, tly, trx, try, color)
 	M.line(trx, try, brx, bry, color)
