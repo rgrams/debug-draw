@@ -125,6 +125,7 @@ end
 
 function M.circle(cx, cy, radius, color, segments, baseAngle)
 	segments = segments or M.default_circle_segments
+	if segments <= 1 then  return  end
 	color = color or M.default_color
 	if M.COLORS[color] then  color = M.COLORS[color]  end
 	baseAngle = baseAngle or 0
@@ -135,6 +136,7 @@ function M.circle(cx, cy, radius, color, segments, baseAngle)
 		local x2, y2 = cx + cos(a2) * radius, cy + sin(a2) * radius
 		M.line(x1, y1, x2, y2, color)
 		x1, y1 = x2, y2
+		if segments <= 2 then  break  end -- Don't bother drawing both if it's only 2 with no gap.
 	end
 end
 
