@@ -108,3 +108,4 @@ Draws some text. Unlike the other functions, this one's X and Y are in *screen s
 * __text__ <kbd>string</kbd> - The text to draw.
 * __x, y__ <kbd>number</kbd> - X and Y of the top left corner of the text's bounding box, in *screen space*.
 * __color__ <kbd>nil | string | vector4</kbd> - Line color. Can be a vector4 or a string name from the COLORS list.
+	* *Optional - `debugdraw.default_color` (yellow) by default.*
