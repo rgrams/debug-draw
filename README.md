@@ -1,5 +1,5 @@
 # Debug-Draw
-A set of convenience functions to draw lines, shapes, and text with the "draw_line" and "draw_text" render messages. This is not intended to be used for final game graphics. Most of the functions only draw on a 2D plane at z=0, though the `ray` function can draw 3D lines.
+A set of convenience functions to draw lines, shapes, and text with the "draw_line" and "draw_debug_text" render messages. This is not intended to be used for final game graphics. Most of the functions only draw on a 2D plane at z=0, though the `ray` function can draw 3D lines.
 
 __Dependency Link:__
 >https://github.com/rgrams/debug-draw/archive/master.zip
@@ -101,9 +101,10 @@ Draw a circle from a center point and a radius, with optional segment count and 
 * __baseAngle__ <kbd>nil | number</kbd> - The angle in radians of the first vertex of the circle. Measured counter-clockwise from the positive X-axis. This only really matters if you're using a very low number of segments.
 	* *Optional - `0` by default.*
 
-### debugdraw.text(text, x, y)
-Draws some text. Unlike the other functions, this one's X and Y are in *screen space* (starting from (0,0) at the bottom left of the screen). Unfortunately, Defold does not yet support changing the color of this text, so it will always be dark blue.
+### debugdraw.text(text, x, y, [color])
+Draws some text. Unlike the other functions, this one's X and Y are in *screen space* (starting from (0,0) at the bottom left of the screen).
 
 *PARAMETERS*
 * __text__ <kbd>string</kbd> - The text to draw.
 * __x, y__ <kbd>number</kbd> - X and Y of the top left corner of the text's bounding box, in *screen space*.
+* __color__ <kbd>nil | string | vector4</kbd> - Line color. Can be a vector4 or a string name from the COLORS list.
