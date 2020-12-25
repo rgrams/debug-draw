@@ -6,6 +6,9 @@ __Dependency Link:__
 
 *Don't know what to do with this link? Read the manual: https://www.defold.com/manuals/libraries/*
 
+To use the module in your scripts, you must require it, like so:
+> `local debugdraw = require "debug-draw.debug-draw"`
+
 ## Settings:
 
 ### debugdraw.COLORS
